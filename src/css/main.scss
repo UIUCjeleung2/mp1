@@ -1,1 +1,40 @@
 /* Your SCSS here. */
+$navbar-bg: #5DE2E7;
+$div1-bg: #ff0000;
+$navbar-item-border: 3px dashed white;
+
+
+
+.navbar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: $navbar-bg;
+    z-index: 100;
+    justify-content: flex-end;
+    gap: 20px;
+    padding-right: 20px;
+}
+
+.navbar-item {
+    color: red;
+    padding: 5px;
+    border: $navbar-item-border;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+.navbar-item-no-outline {
+    color: red;
+    padding: 5px;
+    border: none;
+    background-color: none;
+}
+
+.div1 {
+    background-color: $div1-bg;
+}
+
+.div1 h1 {
+    color: blue;
+}
