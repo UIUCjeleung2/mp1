@@ -2,6 +2,8 @@
 $navbar-bg: #7C9DD0;
 $div1-bg: #ff0000;
 $navbar-item-border: 3px dashed white;
+$font: "Montserrat", monospace;
+$alternate-font: "JetBrains Mono", monospace;
 
 
 
@@ -30,7 +32,7 @@ html, body {
 .navbar-item {
     color: #2c3e50;
     padding: 8px 12px;
-    border: 2px solid transparent; /* Space reserved */
+    border: 2px solid transparent;
     border-radius: 4px;
     border-color: transparent;
     background-color: transparent;
@@ -39,7 +41,7 @@ html, body {
 }
 
 .navbar-logo {
-    font-family: "Montserrat", monospace;
+    font-family: $font;
     color: #2c3e50;
     margin-right: auto;
     padding-left: 20px;
@@ -77,16 +79,14 @@ html, body {
 
 .carousel-description {
     display: flex;
-    flex-direction: column; /* stack text vertically */
-    align-items: center;    /* center horizontally */
-    justify-content: center; /* center vertically if height set */
-    text-align: center;     /* center text inside each element */
-    /* optionally add height if you want vertical centering */
-    /* height: 100%; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .carousel-header {
-    font-family: "Montserrat", monospace;
+    font-family: $font;
     color: #2c3e50; 
 }
 
@@ -98,7 +98,6 @@ html, body {
     height: 400px;
     overflow: hidden;
     margin: auto;
-    border: 2px solid red;
     aspect-ratio: 16 / 9;
 
 }
@@ -135,7 +134,7 @@ html, body {
 
 .modalgrid-wrapper {
   width: 80%;
-  margin: 0 auto;   /* center horizontally */
+  margin: 0 auto; 
 }
 
 .modalgrid {
@@ -143,7 +142,7 @@ html, body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     // width: 100%;
-    // height: 300px; /* or some fixed height */
+    // height: 300px; fixed height is nono
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -152,9 +151,9 @@ html, body {
 }
 
 .modal-title {
-    text-align: center;      /* center the text horizontally */
-    margin-top: 20px;     /* space between header and grid */
-    font-family: "Montserrat", monospace;
+    text-align: center;
+    margin-top: 20px;     
+    font-family: $font;
     font-weight: bold;
     color: #2c3e50;
 }
@@ -198,38 +197,37 @@ html, body {
   width: 80vw;
   height: 80vh;
 
-  object-fit: contain; /* preserves aspect ratio */
+  object-fit: contain;
 }
 
 
-/* The Modal (background) */
+
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1000; /* Sit on top */
-  padding-top: 60px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    display: none; // Hidden by default
+    position: fixed; 
+    z-index: 1000; 
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
 
-  opacity: 0;
-  transform: translateY(-20px);
-  pointer-events: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
 
-  transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Modal Content (image) */
 .modal.active {
     //   margin: auto;
     //   display: block;
-  object-fit: contain;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+    object-fit: contain;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 
@@ -238,11 +236,10 @@ html, body {
     opacity: 1;
     transition: opacity 0.5s ease;
     font-size: large;
-    font-family: "JetBrains Mono", monospace;
+    font-family: $alternate-font;
     padding: 0 80px;
 }
 
-/* The Close Button */
 .close {
   position: absolute;
   top: 20px;
@@ -261,26 +258,24 @@ html, body {
 
 .columnized-wrapper {
     margin-top: 20px;
+    margin-bottom: 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto;
     color: #2c3e50;
-    //background-color: navy;
-    // width: 100%;
-    // height: 300px; /* or some fixed height */
 }
 
 .columnized-header {
     grid-column: 1 / -1;
     text-align: center;
-    font-family: "Montserrat", monospace;
+    font-family: $font;
 }
 
 .columnized.child {
     display: flex;
     flex-direction: column;
     // width: 100%;
-    height: 150px; /* or some fixed height */
+    height: 150px; 
     justify-content: center;
     align-items: center;
     margin-top: 20px;
@@ -293,20 +288,22 @@ html, body {
 
 .columnized.child p {
     font-size: large;
-    font-family: "JetBrains Mono", monospace;
+    font-family: $alternate-font;
     padding: 0 40px;
 }
 
 #myVideo {
-  width: 100%;     /* full viewport width */
-  height: auto;     /* maintain aspect ratio */
-  display: block;   /* removes inline spacing */
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     height: 200px;
+    margin-bottom: 30px;
+
 }
 
 
@@ -315,10 +312,9 @@ html, body {
     //grid-template-rows: 1fr 1fr; 
     color: #1A3E5B;
     text-align: center;
-    flex-direction: column; /* stacks children vertically */
-    /* Optional for centering */
-    justify-content: flex-start; /* vertical alignment */
-    align-items: center;     /* horizontal alignment */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .about-header {
@@ -326,9 +322,13 @@ html, body {
 }
 
 .about-content {
-    padding: 0 40px;
-    font-size: large;
-    font-family: "JetBrains Mono", monospace;
+  max-width: 600px;
+  width: 100%;
+  padding: 0 1rem;
+  font-size: 1.1rem;            
+  font-family: $alternate-font;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .socials-wrapper {

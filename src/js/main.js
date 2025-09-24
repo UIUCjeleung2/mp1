@@ -205,6 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// Carousel things
 
 const path = document.querySelector('.carousel-path');
 const items = document.querySelectorAll('.carousel-item');
