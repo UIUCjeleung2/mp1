@@ -1,9 +1,15 @@
 /* Your SCSS here. */
-$navbar-bg: #5DE2E7;
+$navbar-bg: #7C9DD0;
 $div1-bg: #ff0000;
 $navbar-item-border: 3px dashed white;
 
 
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom,#a6eebe, #4094c8);
+}
 
 .navbar {
     display: flex;
@@ -13,20 +19,16 @@ $navbar-item-border: 3px dashed white;
     background-color: $navbar-bg;
     z-index: 100;
     justify-content: flex-end;
-    gap: 20px;
-    padding-right: 20px;
     height: 100px;
-    padding: 0 20px;
     transition: height 0.3s ease;
 }
 
 .navbar.shrink {
     height: 60px;
-    padding: 0 15px;
 }
 
 .navbar-item {
-    color: red;
+    color: #2c3e50;
     padding: 8px 12px;
     border: 2px solid transparent; /* Space reserved */
     border-radius: 4px;
@@ -36,8 +38,22 @@ $navbar-item-border: 3px dashed white;
     cursor: pointer;
 }
 
+.navbar-logo {
+    font-family: "Montserrat", monospace;
+    color: #2c3e50;
+    margin-right: auto;
+    padding-left: 20px;
+    font-size: 25px;
+    transition: font-size 0.3s ease;
+}
+
+.navbar-logo.shrunk{
+    font-size: 20px;
+    transition: font-size 0.3s ease;
+}
+
 .navbar-item-outline {
-    color:red;
+    color:cyan;
     border-color: black;
     background-color: gray;
 }
@@ -51,23 +67,54 @@ $navbar-item-border: 3px dashed white;
     color: blue;
 }
 
+
+.carousel-wrapper {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.carousel-description {
+    display: flex;
+    flex-direction: column; /* stack text vertically */
+    align-items: center;    /* center horizontally */
+    justify-content: center; /* center vertically if height set */
+    text-align: center;     /* center text inside each element */
+    /* optionally add height if you want vertical centering */
+    /* height: 100%; */
+}
+
+.carousel-header {
+    font-family: "Montserrat", monospace;
+    color: #2c3e50; 
+}
+
 .carousel {
+    grid-column: 2;
+    justify-self: end;
     position: relative;
     width: 100%;
-    max-width: 560px;
+    height: 400px;
     overflow: hidden;
     margin: auto;
+    border: 2px solid red;
+    aspect-ratio: 16 / 9;
+
 }
 
 .carousel-path {
     display: flex;
     transition: transform 0.5s ease;
     width: 100%;
+    height: 100%;
 }
 
 .carousel-item {
     width: 100%;
+    height: 100%;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 .carousel-button {
@@ -86,23 +133,223 @@ $navbar-item-border: 3px dashed white;
 .carousel-button.next { right: 10px; }
 
 
-.columnized {
-    display: flex;
-    width: 100%;
-    height: 300px; /* or some fixed height */
+.modalgrid-wrapper {
+  width: 80%;
+  margin: 0 auto;   /* center horizontally */
+}
+
+.modalgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    // width: 100%;
+    // height: 300px; /* or some fixed height */
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto;
 }
 
-.columnized.child {
+.modal-title {
+    text-align: center;      /* center the text horizontally */
+    margin-top: 20px;     /* space between header and grid */
+    font-family: "Montserrat", monospace;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.modalgrid.child {
+    display: flex;
     background-color: cyan;
     color: red;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    align-self: stretch;
+    justify-self: stretch;
 }
 
+.modalgrid.child img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
 .div.background {
-    background-image: url("../assets/bear.gif");
+    background-image: url("../assets/bearbg.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     height: 500px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+
+.modal-content {
+  margin: auto;
+  display: block;
+
+  width: 80vw;
+  height: 80vh;
+
+  object-fit: contain; /* preserves aspect ratio */
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding-top: 60px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Modal Content (image) */
+.modal.active {
+    //   margin: auto;
+    //   display: block;
+  object-fit: contain;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+
+#carousel-text {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    font-size: large;
+    font-family: "JetBrains Mono", monospace;
+    padding: 0 80px;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #bbb;
+}
+
+
+
+.columnized-wrapper {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    color: #2c3e50;
+    //background-color: navy;
+    // width: 100%;
+    // height: 300px; /* or some fixed height */
+}
+
+.columnized-header {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-family: "Montserrat", monospace;
+}
+
+.columnized.child {
+    display: flex;
+    flex-direction: column;
+    // width: 100%;
+    height: 150px; /* or some fixed height */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.columnized.child i {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.columnized.child p {
+    font-size: large;
+    font-family: "JetBrains Mono", monospace;
+    padding: 0 40px;
+}
+
+#myVideo {
+  width: 100%;     /* full viewport width */
+  height: auto;     /* maintain aspect ratio */
+  display: block;   /* removes inline spacing */
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 200px;
+}
+
+
+.about {
+    display: flex;
+    //grid-template-rows: 1fr 1fr; 
+    color: #1A3E5B;
+    text-align: center;
+    flex-direction: column; /* stacks children vertically */
+    /* Optional for centering */
+    justify-content: flex-start; /* vertical alignment */
+    align-items: center;     /* horizontal alignment */
+}
+
+.about-header {
+    text-align: center;
+}
+
+.about-content {
+    padding: 0 40px;
+    font-size: large;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.socials-wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    height: 100%;
+    gap: 10px;
+    color: #1A3E5B;
+}
+
+.socials-header {
+    text-align: center;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+}
+
+.socials i {
+    color: black;
+    font-size: 30px;
 }

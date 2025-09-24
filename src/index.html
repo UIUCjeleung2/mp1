@@ -4,71 +4,142 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/e9f89f776f.js" crossorigin="anonymous"></script>
         <title>MP1</title>
     </head>
     <body>
 
         <nav class = "navbar">
-            <h3 class = "navbar-item">Section1</h3>
-            <h3 class = "navbar-item">Section2</h3>
-            <h3 class = "navbar-item">Section3</h3>
+            <h2 class = "navbar-logo" id = "header">Polar Bears!</h2>
+            <h3 class = "navbar-item">Video</h3>
+            <h3 class = "navbar-item">Modal</h3>
+            <h3 class = "navbar-item">MultiColumn</h3>
+            <h3 class = "navbar-item">Carousel</h3>
+            <h3 class = "navbar-item">GIF</h3>
         </nav>
 
-        <div class = "div1">
-            <h1>Section 1</h1>
-            <img src="assets/image.jpg"></img>
+        <video id="myVideo" autoplay muted loop>
+            <source src="assets/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+            <div id="caption"></div>
         </div>
-        <div class = "div1">
-            <h1>Section 2</h1>
-            <img src="assets/image.jpg"></img>
+
+        <div class = "modalgrid-wrapper">
+            <h1 class = "modal-title">Bear Gallery</h1>
+            <div class = "modalgrid">
+                <div class = "modalgrid child">
+                    <img src="assets/baby1.jpg" class = "clickable"></img>
+                </div>
+                <div class = "modalgrid child">
+                    <img src="assets/baby2.jpg" class = "clickable"></img>
+                </div>
+                <div class = "modalgrid child">
+                    <img src="assets/baby3.jpg" class = "clickable"></img>
+                </div>
+                <div class = "modalgrid child">
+                    <img src="assets/bear4.jpg" class = "clickable"></img>
+                </div>
+                <div class = "modalgrid child">
+                    <img src="assets/running.jpg" class = "clickable"></img>
+                </div>
+                <div class = "modalgrid child">
+                    <img src="assets/swimming.jpg" class = "clickable"></img>
+                </div>
+            </div>
         </div>
-        <div class = "div1">
-            <h1>Section 3</h1>
-            <img src="assets/image.jpg"></img>
-        </div>
-        <div class = "div1">
-            <h1>Section 4</h1>
-            <img src="assets/image.jpg"></img>
-        </div>
-        <div class = "columnized">
+        
+        <div class = "columnized-wrapper">
+            <h1 class = "columnized-header">Fun Facts</h1>
             <div class = "columnized child">
-                <p>Column 1 Content</p>            
+                <i class="fa-solid fa-house"></i>
+                <p>Polar bears (Ursus maritimus) live in the Arctic Circle, including places such as Northern Canada, Greenland, and Alaska.</p>
             </div>
             <div class = "columnized child">
-                <p>Column 2 Content</p>
+                <i class="fa-solid fa-person-running"></i>
+                <p>They can run fast, up to 25mph. However, they can get hot very quickly, so they usually walk.</p>
             </div>
             <div class = "columnized child">
-                <p>Column 3 Content</p>
+                <i class="fa-solid fa-person-swimming"></i>
+                <p>Being one of the best swimmers among land mammals, they can swim up to 60 miles without stopping in search of seals.</p>
             </div>
         </div>
+
+
+        <div class = "carousel-wrapper">
+            <div class = "carousel-description">
+                <h1 class = "carousel-header">Polar Bear Moments</h1>
+                <p id = "carousel-text">When they're born, they're only about 1lb, and they're very cute!</p>
+            </div>
+            <div class = "carousel">
+                <div class = "carousel-path">
+                    <img src="assets/baby.jpg" class = "carousel-item"></img>
+                    <img src="assets/adolescent.jpg" class = "carousel-item"></img>
+                    <img src="assets/adult.jpg" class = "carousel-item"></img>
+                </div>
+                <button class = "carousel-button previous"><</button>
+                <button class = "carousel-button next">></button>
+            </div>
+        </div>  
+
         <div class = "div background">
 
         </div>
 
-        <div class = "carousel">
-            <div class = "carousel-path">
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
-                <img src="assets/image.jpg" class = "carousel-item"></img>
+
+
+
+        <div class = "footer">
+            <div class = "about">
+                <div class = "about-header">
+                    <h3>About</h3>
+                </div>
+                <div class = "about-content">
+                    <p>This webpage was made completely in HTML/CSS/JS.</p>
+                </div>
             </div>
-            <button class = "carousel-button previous"><</button>
-            <button class = "carousel-button next">></button>
-        </div>  
+
+            <div class = "socials-wrapper">
+                <div class = "socials-header">
+                    <h3>Socials</h3>
+                </div>
+                <div class = "socials">
+                    <a href="https://github.com/scharlau/polar_bears_django">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.google.com/search?q=polar+bear&sca_esv=f3abac6c97ce75c7&sxsrf=AE3TifNU521ZKz2nmby8veaTa5G4kSxKeA%3A1758674183343&source=hp&ei=Bz3TaI-mEqHg0PEPgKzfyQQ&iflsig=AOw8s4IAAAAAaNNLF6k8vdkNnck5a55OSsoJtMEXzNY8&ved=0ahUKEwjPxeLvk_CPAxUhMDQIHQDWN0kQ4dUDCBo&uact=5&oq=polar+bear&gs_lp=Egdnd3Mtd2l6Igpwb2xhciBiZWFyMgsQLhiABBixAxiDATIUEC4YgAQYsQMYgwEYxwEYigUYrwEyCBAAGIAEGLEDMggQABiABBixAzIFEAAYgAQyBRAAGIAEMg4QABiABBixAxiDARiKBTIFEAAYgAQyCBAAGIAEGLEDMgUQABiABEjeD1DoAVjTDnADeACQAQCYAVWgAa0GqgECMTK4AQPIAQD4AQGYAg-gAuYGqAIKwgIHECMYJxjqAsICEBAjGKAGGCcY6gIYqwYY3QXCAgsQLhiABBjRAxjHAcICDhAuGIAEGLEDGNEDGMcBwgILEAAYgAQYsQMYgwHCAgsQLhiABBjHARivAcICERAuGIAEGLEDGNEDGIMBGMcBwgIIEC4YgAQYsQPCAgUQLhiABJgDBfEFfGc3RWs-lqCSBwIxNaAH_ZoBsgcCMTK4B9cGwgcFMC45LjbIByg&sclient=gws-wiz">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+                    <a href="https://www.instagram.com/polarbearsinternational/">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1&pp=ygUIcmljayByb2ygBwE%3D">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.reddit.com/r/polarbears/">
+                        <i class="fa-brands fa-reddit"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class = "about">
+                <div class = "about-header">
+                    <h3>Details</h3>
+                </div>
+                <div class = "about-content">
+                    <p>It is the first time I tried to build a page without libraries, and it shows. I wish I had access to premade widgets that looked nice, as designing my own was hard.</p>
+                </div>
+            </div>            
+
+
+        </div>
+
 
     </body>
 </html>
